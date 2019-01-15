@@ -1,0 +1,24 @@
+web:
+    image: nginx:latest
+    ports:  
+        - "8080:80"
+    volumes:
+        - ./site:/site
+        - ./site.conf:/etc/nginx/conf.d/default.conf
+    links:
+        - php
+php:
+    image: php:7-fpm
+    volumes:
+        - ./site:/site
+# node:
+#     restart: 'no'
+#     image: node:slim
+#     volumes:
+#         - ./dev:/dev
+    #working_dir: /var/www/html/wp-content/themes/theme
+    # build:
+    #     context: .
+    #     dockerfile: WordpressBuild
+    #     args:
+    #         - SITE_VERSION=0.0.1
