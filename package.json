@@ -1,0 +1,26 @@
+{
+  "name": "in-web",
+  "version": "1.0.0",
+  "description": "inboxr website build",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Inboxr-UK/in-blog.git"
+  },
+  "author": "brent starling",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Inboxr-UK/in-blog/issues"
+  },
+  "homepage": "https://github.com/Inboxr-UK/in-blog#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-docker-compose": "^1.1.3",
+    "gulp-plumber": "^1.2.1",
+    "vinyl-fs": "^3.0.3"
+  }
+}
