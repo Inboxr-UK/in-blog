@@ -8,10 +8,11 @@
 * Gulp-CLI @ 3.9.1
 * NPM @ 6.4.1
 * Node @ 10.13.0
+* gem install scss_ylint
 
 ### Software
 
 * Download the repo and head to the installed folder in terminal.
 * Run `npm install`
 * Run `gulp`
-* Open a browser and view `localhost:8080`
+* A browser should open to view `localhost:8080`

@@ -17,10 +17,20 @@
   },
   "homepage": "https://github.com/Inboxr-UK/in-blog#readme",
   "devDependencies": {
+    "avalanche-css": "^1.3.0",
+    "browser-sync": "^2.26.3",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.4.0",
     "gulp-docker-compose": "^1.1.3",
+    "gulp-livereload": "^4.0.1",
+    "gulp-open": "^3.0.1",
     "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-lint": "^1.4.0",
+    "gulp-sitemap": "^6.1.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "os": "^0.1.1",
+    "run-sequence": "^2.2.1",
     "vinyl-fs": "^3.0.3"
   }
 }

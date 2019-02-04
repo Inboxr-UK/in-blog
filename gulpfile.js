@@ -1,12 +1,21 @@
+const os = require('os');
 const gulp = require('gulp');
 const clean = require('gulp-clean');
 const path = require('path');
 const plumber = require('gulp-plumber');
 const vfs = require('vinyl-fs');
 const GulpDockerCompose = require('gulp-docker-compose').GulpDockerCompose;
+const livereload = require('gulp-livereload');
+const sass = require('gulp-sass');
+const sassLint = require('gulp-sass-lint');
+const run = require('run-sequence');
+const sourcemaps = require('gulp-sourcemaps');
+ 
+sass.compiler = require('node-sass');
 
 const srcFolder = `${__dirname}/site/`;
 const dstFolder = `${__dirname}/www/`;
+
 
 // clean the previous build
 gulp.task('clean', function() {
@@ -17,19 +26,9 @@ gulp.task('clean', function() {
 //compile js removed as dont need to compile
 gulp.task('build', ['clean'], function() {
     // vfs follows symlinks
-    // return vfs.src(srcFolder+'/**/*.js')
-    //     .pipe(plumber())
-    //     .pipe(babel({
-    //         presets: [
-    //             ["env", {
-    //                 "targets": {
-    //                     "node": "4"
-    //                 },
-    //                 "modules": "commonjs",
-    //             }],
-    //         ]
-    //     }))
-    //     .pipe(vfs.dest(dstFolder));
+    return vfs.src(srcFolder+'/**/*')
+        .pipe(plumber())
+        .pipe(vfs.dest(dstFolder));
 });
 
 var gulpDocker = new GulpDockerCompose(gulp, {
@@ -58,8 +57,33 @@ var gulpDocker = new GulpDockerCompose(gulp, {
     projectFolder: __dirname,
 });
 
-gulp.task('watch', function() {
-    gulp.watch([srcFolder+'/**/*'], ['restart']);
+
+gulp.task('sass', ['sassLint'], function () {
+    return gulp.src('./assets/sass/**/*.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulp.dest('./site/themes/inboxr/css'));
+        //.pipe(livereload());
 });
 
-gulp.task('default', [ 'watch', 'run']); //'watch-yml', 'build', 'build', 
+gulp.task('sassLint', function() {
+    return gulp.src(['./assets/sass/**/*.s+(a|c)ss', '!./assets/sass/_grid.scss'])
+        .pipe(sassLint())
+        .pipe(sassLint.format())
+        .pipe(sassLint.failOnError());
+});
+
+// gulp.task('sass:watch', function () {
+//     gulp.watch('./sass/**/*.scss', ['sass']);
+//   });
+
+gulp.task('watch', function() {
+    gulp.watch([srcFolder+'/**/*'], ['build', 'restart']);
+    gulp.watch(['./assets/sass/**/*.scss'], ['sass']);
+});
+
+gulp.task('default', function (cb) {
+    livereload.listen();  
+    run('sass', 'build', 'watch', 'run', cb);
+}); //'watch-yml', 'build', 'build', 
