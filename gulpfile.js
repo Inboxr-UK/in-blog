@@ -10,6 +10,8 @@ const sass = require('gulp-sass');
 const sassLint = require('gulp-sass-lint');
 const run = require('run-sequence');
 const sourcemaps = require('gulp-sourcemaps');
+const imagemin = require('gulp-imagemin');
+const minify = require('gulp-minify');
  
 sass.compiler = require('node-sass');
 
@@ -78,12 +80,40 @@ gulp.task('sassLint', function() {
 //     gulp.watch('./sass/**/*.scss', ['sass']);
 //   });
 
+
+ 
+gulp.task('scripts', function() {
+    gulp.src(['./assets/scripts/**/*'])
+        .pipe(sourcemaps.init())
+        .pipe(minify())
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulp.dest('./site/themes/inboxr/scripts'))
+});
+ 
+gulp.task('images', function() {
+    return gulp.src('./assets/images/*')
+        .pipe(imagemin([
+            imagemin.gifsicle({interlaced: true}),
+            imagemin.jpegtran({progressive: true}),
+            imagemin.optipng({optimizationLevel: 5}),
+            imagemin.svgo({
+                plugins: [
+                    {removeViewBox: true},
+                    {cleanupIDs: false}
+                ]
+            })
+        ]))
+        .pipe(gulp.dest('./site/themes/inboxr/images'))
+});
+
 gulp.task('watch', function() {
     gulp.watch([srcFolder+'/**/*'], ['build', 'restart']);
     gulp.watch(['./assets/sass/**/*.scss'], ['sass']);
+    gulp.watch(['./assets/images/**/*'], ['images']);
+    gulp.watch(['./assets/scripts/**/*'], ['images']);
 });
 
 gulp.task('default', function (cb) {
     livereload.listen();  
-    run('sass', 'build', 'watch', 'run', cb);
+    run('sass', 'images', 'scripts', 'build', 'watch', 'run', cb);
 }); //'watch-yml', 'build', 'build', 
