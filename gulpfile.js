@@ -43,11 +43,7 @@ var gulpDocker = new GulpDockerCompose(gulp, {
         restart: {
             name: 'restart',
             dependences: ['build'],
-        },
-        // are we using thos?
-        // watchYML: {
-        //     name: 'watch-yml',
-        // },
+        }
     },
     extraArgs: {
         upOnRun: '--scale app=3',
@@ -58,7 +54,6 @@ var gulpDocker = new GulpDockerCompose(gulp, {
     exposeStdErr: true,
     projectFolder: __dirname,
 });
-
 
 gulp.task('sass', ['sassLint'], function () {
     return gulp.src('./assets/sass/**/*.scss')
@@ -75,12 +70,6 @@ gulp.task('sassLint', function() {
         .pipe(sassLint.format())
         .pipe(sassLint.failOnError());
 });
-
-// gulp.task('sass:watch', function () {
-//     gulp.watch('./sass/**/*.scss', ['sass']);
-//   });
-
-
  
 gulp.task('scripts', function() {
     gulp.src(['./assets/scripts/**/*'])
@@ -103,7 +92,7 @@ gulp.task('images', function() {
                 ]
             })
         ]))
-        .pipe(gulp.dest('./site/themes/inboxr/images'))
+        .pipe(gulp.dest('./site/assets/images'))
 });
 
 gulp.task('watch', function() {
@@ -114,6 +103,5 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', function (cb) {
-    livereload.listen();  
     run('sass', 'images', 'scripts', 'build', 'watch', 'run', cb);
-}); //'watch-yml', 'build', 'build', 
+});

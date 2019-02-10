@@ -36,23 +36,41 @@ body {
 section {
   background-color: $iui-color-white;
   border-bottom: 1px solid $iui-color-grayscale-light;
-  color: $iui-color-grayscale-dark;
+  color: $iui-color-grayscale;
   margin: 0;
   max-width: 100%;
-  padding: $size-8 * 1rem 0;
-
-  .wrapper {
-    @extend %wrapper;
-    padding: 0;
-  }
+  padding: $size-9 * 1rem 0;
 }
 
+.wrapper {
+  @extend %wrapper;
+  padding: 0;
+}
+
+.layout {
+  @extend .grid;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $iui-color-grayscale-dark;
+  margin: 0;
+  padding: 0;
+}
+
+button,
 .button {
-  @extend %body;
+  @extend %featured;
+  border: none;
   border-radius: 3px;
   cursor: pointer;
-  display: inline-block;
-  padding: 7px 10px;
+  display: block;
+  width: 100%;
+  padding: $size-3 * 1rem $size-3 * 1rem;
+  transition: 0.3s;
 
   &:hover {
     text-decoration: none;
@@ -75,4 +93,29 @@ a {
 p {
   margin: 0 0 $size-3 * 1rem;
   padding: 0;
+}
+
+label {
+  @extend %strong;
+  display: block;
+  margin-bottom: $size-2 * 1rem;
+}
+
+input {
+  @extend %body;
+  border: 1px solid $iui-color-grayscale-light;
+  border-radius: 2px;
+  display: block;
+  width: 100%;
+  padding: $size-3 * 1rem $size-3 * 1rem;
+  margin-bottom: $size-4 * 1rem;
+}
+
+form {
+  background-color: $iui-color-white;
+  padding: $size-5 * 1rem;
+}
+
+header {
+  background-color: $iui-color-primary;
 }

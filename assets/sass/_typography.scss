@@ -16,16 +16,6 @@ $size-9: 5.14285722; //72
 $base-font-size: 14;
 $base-line-height: 20;
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  margin: 0;
-  padding: 0;
-}
-
-
 %title-five {
   font-size: $size-9 * 1rem;
   font-weight: 700;

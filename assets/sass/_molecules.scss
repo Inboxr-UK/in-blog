@@ -1,12 +1,179 @@
 // empty :(
 
-header {
-  background-color: $iui-color-primary;
-}
+  header {
+    border: 0;
+    color: $iui-color-primary;
+    padding: $size-4 * 1rem 0;
+
+    .layout {
+      @extend .grid--middle;
+    }
+  
+    .header-logo {
+      @extend .grid__cell;
+      @extend .\31\/4;
+      height: $size-5 * 1rem;
+  
+        img {
+          height: 100%;
+        }
+    }
+  
+    .header-navigation {
+      @extend .grid__cell;
+      @extend .\33\/4;
+  
+      text-align: right;
+  
+      ul {
+        margin: 0;
+        padding: 0;
+  
+        li {
+          display: inline-block;
+          margin: 0;
+          padding: 0;
+  
+          a {
+            color: $iui-color-white;
+            display: block;
+            padding-left: $size-5 * 1rem;
+            text-transform: uppercase;
+  
+            &:hover {
+              color: $iui-color-primary-lightest;
+            }
+          }
+        }
+      }
+    }
+  }
 
 footer {
-  padding: $size-6 * 1rem 0;
-  background-color: $iui-color-grayscale-lightest;
   border: 0;
   color: $iui-color-grayscale-dark;
+  padding: $size-6 * 1rem 0;
+
+  .layout {
+    @extend .grid--middle;
+  }
+
+  .footer-logo {
+    @extend .grid__cell;
+    @extend .\31\/4;
+    height: $size-5 * 1rem;
+
+      img {
+        height: 100%;
+      }
+  }
+
+  .footer-navigation {
+    @extend .grid__cell;
+    @extend .\33\/4;
+
+    text-align: right;
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+
+        a {
+          color: $iui-color-grayscale-dark;
+          display: block;
+          padding-left: $size-5 * 1rem;
+          text-transform: uppercase;
+
+          &:hover {
+            color: $iui-color-primary;
+          }
+        }
+      }
+    }
+  }
+}
+
+.subscribe {
+  background-color: $iui-color-primary-lightest;
+  border: none;
+
+  h2 {
+    @extend %title-four;
+    margin-bottom: $size-5 * 1rem;
+    max-width: 65%;
+  }
+
+  .content {
+    @extend .grid__cell;
+    @extend .\31\/2;
+
+    p {
+      margin-bottom: $size-3 * 1rem;
+      max-width: 85%;
+    }
+
+  }
+
+  .form {
+    @extend .grid__cell;
+    @extend .\31\/2;
+
+    button {
+      background-color: $iui-color-primary;
+      color: $iui-color-white;
+
+      &:hover {
+        background-color: $iui-color-primary-dark;
+      }
+    }
+
+    form {
+      box-shadow: 1px 1px 5px $iui-color-primary-lighter;
+    }
+  }
+}
+
+.author {
+
+  h2 {
+    @extend %title-three;
+    padding-bottom: $size-3 * 1rem;
+    margin-bottom: $size-6 * 1rem;
+    border-bottom: 1px solid $iui-color-grayscale-lighter;
+  }
+
+  .photo {
+    @extend .grid__cell;
+    @extend .\31\/5;
+
+    .photo-container {
+      width: 100px;
+      height: 100px;
+      margin-left: auto;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 50%;
+    }
+  }
+
+  .content {
+    @extend .grid__cell;
+    @extend .\33\/5;
+    
+    h3 {
+      @extend %title-one;
+    }
+  }
+
+  .social{
+    @extend .grid__cell;
+    @extend .\31\/5;
+  }
 }

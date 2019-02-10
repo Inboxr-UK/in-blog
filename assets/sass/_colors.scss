@@ -11,35 +11,35 @@ $iui-color-black: #000;
 $iui-color-white: #fff;
 
 //dark - teir 1
-$iui-color-destructive-dark: darken($iui-color-destructive, 20%);
-$iui-color-callout-dark: darken($iui-color-destructive, 20%);
-$iui-color-compliment-dark: darken($iui-color-compliment, 20%);
-$iui-color-constructive-dark: darken($iui-color-destructive, 20%);
-$iui-color-primary-dark: darken($iui-color-primary, 20%);
-$iui-color-grayscale-dark: darken($iui-color-grayscale, 90%);
+$iui-color-destructive-dark: darken($iui-color-destructive, 5%);
+$iui-color-callout-dark: darken($iui-color-callout, 5%);
+$iui-color-compliment-dark: darken($iui-color-compliment, 5%);
+$iui-color-constructive-dark: darken($iui-color-destructive, 5%);
+$iui-color-primary-dark: darken($iui-color-primary, 5%);
+$iui-color-grayscale-dark: darken($iui-color-grayscale, 5%);
 
 
 //light - tier 3
 $iui-color-destructive-light: lighten($iui-color-destructive, 20%);
-$iui-color-callout-light: lighten($iui-color-destructive, 20%);
+$iui-color-callout-light: lighten($iui-color-callout, 20%);
 $iui-color-compliment-light: lighten($iui-color-compliment, 20%);
-$iui-color-constructive-light: lighten($iui-color-destructive, 20%);
+$iui-color-constructive-light: lighten($iui-color-constructive, 20%);
 $iui-color-primary-light: lighten($iui-color-primary, 30%);
 $iui-color-grayscale-light: lighten($iui-color-grayscale, 25%);
 
 //lighter - tier 4
 $iui-color-destructive-lighter: lighten($iui-color-destructive, 30%);
-$iui-color-callout-lighter: lighten($iui-color-destructive, 30%);
+$iui-color-callout-lighter: lighten($iui-color-callout, 30%);
 $iui-color-compliment-lighter: lighten($iui-color-compliment, 30%);
-$iui-color-constructive-lighter: lighten($iui-color-destructive, 30%);
+$iui-color-constructive-lighter: lighten($iui-color-constructive, 30%);
 $iui-color-primary-lighter: lighten($iui-color-primary, 40%);
 $iui-color-grayscale-lighter: lighten($iui-color-grayscale, 50%);
 
 //lightest - tier 5
-$iui-color-destructive-lightest: lighten($iui-color-destructive, 50%);
-$iui-color-callout-lightest: lighten($iui-color-destructive, 50%);
-$iui-color-compliment-lightest: lighten($iui-color-compliment, 50%);
-$iui-color-constructive-lightest: lighten($iui-color-destructive, 50%);
+$iui-color-destructive-lightest: lighten($iui-color-destructive, 60%);
+$iui-color-callout-lightest: lighten($iui-color-callout, 60%);
+$iui-color-compliment-lightest: lighten($iui-color-compliment, 60%);
+$iui-color-constructive-lightest: lighten($iui-color-constructive, 60%);
 $iui-color-primary-lightest: lighten($iui-color-primary, 50%);
 $iui-color-grayscale-lightest: lighten($iui-color-grayscale, 70%);
 
