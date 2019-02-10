@@ -1,1 +1,12 @@
 // empty :(
+
+header {
+  background-color: $iui-color-primary;
+}
+
+footer {
+  padding: $size-6 * 1rem 0;
+  background-color: $iui-color-grayscale-lightest;
+  border: 0;
+  color: $iui-color-grayscale-dark;
+}
