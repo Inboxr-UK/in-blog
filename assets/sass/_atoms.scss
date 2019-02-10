@@ -1,0 +1,78 @@
+
+html {
+  box-sizing: border-box;
+  font-size: 87.5%;
+  line-height: $base-line-height * 1px;
+  margin: 0;
+  padding: 0;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+}
+
+body {
+  @extend %base-font-family;
+  @extend %body;
+  margin: 0;
+  padding: 0;
+}
+
+%wrapper {
+  margin: 0 auto;
+  max-width: 90%;
+
+  @media (min-width: 992px) {
+    max-width: 970px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 1110px;
+  }
+ }
+
+section {
+  background-color: $iui-color-white;
+  border-bottom: 1px solid $iui-color-grayscale-light;
+  color: $iui-color-grayscale-dark;
+  margin: 0;
+  max-width: 100%;
+  padding: $size-8 * 1rem 0;
+
+  .wrapper {
+    @extend %wrapper;
+    padding: 0;
+  }
+}
+
+.button {
+  @extend %body;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+  padding: 7px 10px;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+a {
+  color: $iui-color-action;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+
+  &:hover {
+    color: $iui-color-action-light;
+    text-decoration: underline;
+  }
+}
+
+p {
+  margin: 0 0 $size-3 * 1rem;
+  padding: 0;
+}

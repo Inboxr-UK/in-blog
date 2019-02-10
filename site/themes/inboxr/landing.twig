@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ meta.description|striptags }}">
+    <meta name="author" content="{{ config.author }}">
+
+    <title>{{ site_title }}</title>
+	<!-- [ Social Media Meta Tags ] -->
+	<meta content='{{ site_title }}' property='og:title'/>
+	<meta content='website' property='og:type'/>
+	<meta content='{{ current_page.url }}' property='og:url'/>
+	<meta content='{% if meta.img %}{{ meta.img }}{% else %}{{ theme_url }}/images/home-bg.jpg{% endif %}' property='og:image'/>
+	<meta content="{{ meta.description|striptags }}" property='og:description'/>
+	<meta content='{{ site_title }}' property='og:site_name'/>
+	<meta content='en_US' property='og:locale'/>
+	<meta content='summary_large_image' name='twitter:card'/>
+	<meta content='{{ site_title }}' name='twitter:title'/>
+	<meta content='{{ config.twitter }}' name='twitter:site'/>
+	<meta content='{{ config.twitter }}' name='twitter:creator'/>
+	<meta content='{{ meta.description|striptags }}' name='twitter:description'/>
+	<meta content='{% if meta.img %}{{ meta.img }}{% else %}{{ theme_url }}/images/home-bg.jpg{% endif %}' name='twitter:image'/>
+    
+    <!-- Custom CSS -->
+    <link href="{{ theme_url }}/css/style.css" rel="stylesheet">
+
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+ 
+</head>
+
+<body>
+	
+    <!-- Set your background image for this header on the line below. -->
+    <header class="header" >
+        Header here
+    </header>
+
+    <section>
+        main bit
+    </section>
+
+    <footer>
+        footer
+    </footer>
+</body>
+</html>

@@ -1,0 +1,51 @@
+// base
+$iui-color-destructive: #c00;
+$iui-color-callout: #09c;
+$iui-color-compliment: #ea1;
+$iui-color-constructive: #0ab21b;
+$iui-color-primary: #e21046;
+$iui-color-grayscale: #606060;
+
+//core
+$iui-color-black: #000;
+$iui-color-white: #fff;
+
+//dark - teir 1
+$iui-color-destructive-dark: mix($iui-color-destructive, $iui-color-black, 10%);
+$iui-color-callout-dark: mix($iui-color-destructive, $iui-color-black, 10%);
+$iui-color-compliment-dark: mix($iui-color-compliment, $iui-color-black, 10%);
+$iui-color-constructive-dark: mix($iui-color-destructive, $iui-color-black, 10%);
+$iui-color-primary-dark: mix($iui-color-primary, $iui-color-black, 10%);
+$iui-color-grayscale-dark: mix($iui-color-grayscale, $iui-color-black, 10%);
+
+
+//light - tier 3
+$iui-color-destructive-light: mix($iui-color-destructive, $iui-color-white, 20%);
+$iui-color-callout-light: mix($iui-color-destructive, $iui-color-white, 20%);
+$iui-color-compliment-light: mix($iui-color-compliment, $iui-color-white, 20%);
+$iui-color-constructive-light: mix($iui-color-destructive, $iui-color-white, 20%);
+$iui-color-primary-light: mix($iui-color-primary, $iui-color-white, 20%);
+$iui-color-grayscale-light: mix($iui-color-grayscale, $iui-color-white, 20%);
+
+//lighter - tier 4
+$iui-color-destructive-lighter: mix($iui-color-destructive, $iui-color-white, 50%);
+$iui-color-callout-lighter: mix($iui-color-destructive, $iui-color-white, 50%);
+$iui-color-compliment-lighter: mix($iui-color-compliment, $iui-color-white, 50%);
+$iui-color-constructive-lighter: mix($iui-color-destructive, $iui-color-white, 50%);
+$iui-color-primary-lighter: mix($iui-color-primary, $iui-color-white, 50%);
+$iui-color-grayscale-dark: mix($iui-color-grayscale, $iui-color-white, 50%);
+
+//lightest - tier 5
+$iui-color-destructive-lightest: mix($iui-color-destructive, $iui-color-white, 80%);
+$iui-color-callout-lightest: mix($iui-color-destructive, $iui-color-white, 50%);
+$iui-color-compliment-lightest: mix($iui-color-compliment, $iui-color-white, 80%);
+$iui-color-constructive-lightest: mix($iui-color-destructive, $iui-color-white, 80%);
+$iui-color-primary-light: mix($iui-color-primary, $iui-color-white, 80%);
+$iui-color-grayscale-dark: mix($iui-color-grayscale, $iui-color-white, 80%);
+
+// implimentations
+
+$iui-color-action: $iui-color-primary;
+$iui-color-action-light: $iui-color-primary-light;
+
+

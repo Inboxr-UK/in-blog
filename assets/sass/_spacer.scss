@@ -1,0 +1,42 @@
+.spacer {
+
+  //2px
+  &-1 {
+    margin-bottom: $size-1 * 1rem;
+  }
+
+  //4px
+  &-2 {
+    margin-bottom: $size-2 * 1rem;
+  }
+
+  //8px
+  &-3 {
+    margin-bottom: $size-3 * 1rem;
+  }
+
+  //16px
+  &-4 {
+    margin-bottom: $size-4 * 1rem;
+  }
+
+  //24px
+  &-5 {
+    margin-bottom: $size-5 * 1rem;
+  }
+
+  //32px
+  &-6 {
+    margin-bottom: $size-6 * 1rem;
+  }
+
+  //46px
+  &-7 {
+    margin-bottom: $size-7 * 1rem;
+  }
+
+  //64px
+  &-8 {
+    margin-bottom: $size-8 * 1rem;
+  }
+}
